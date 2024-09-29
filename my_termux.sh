@@ -30,8 +30,10 @@ cat << "EOF" > ~/.termux/logo.txt
 └──────────────────────────────┘
 EOF
 
-# PS1 প্রম্পট আপডেট করা
-echo "PS1='\$(cat ~/.termux/logo.txt)\n\$ '" >> ~/.bashrc
+# bashrc ফাইলে লগো ফাইলটি যোগ করা
+if ! grep -q "cat ~/.termux/logo.txt" ~/.bashrc; then
+    echo "cat ~/.termux/logo.txt" >> ~/.bashrc
+fi
 
 # স্ক্রিপ্ট শেষ হওয়া
 echo -e "\033[1;32mSetup completed! Restart your Termux to see the changes.\033[0m"
