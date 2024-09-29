@@ -32,7 +32,7 @@ EOF
 
 # bashrc ফাইলে লগো ফাইলটি যোগ করা
 if ! grep -q "cat ~/.termux/logo.txt" ~/.bashrc; then
-    echo "cat ~/.termux/logo.txt" >> ~/.bashrc
+    echo "clear; cat ~/.termux/logo.txt; echo" >> ~/.bashrc
 fi
 
 # স্ক্রিপ্ট শেষ হওয়া
