@@ -100,3 +100,15 @@ if [[ $theme_choice -ge 1 && $theme_choice -le 4 ]]; then
     termux-reload-settings
     echo -e "\033[1;32mTheme applied successfully!\033[0m"
 fi
+
+# থিম সেটিংস সুরক্ষিত করতে
+if [[ ! -f ~/.termux/theme_set ]]; then
+    echo "true" > ~/.termux/theme_set
+fi
+
+# থিম রিমুভ হতে না দেয়ার জন্য চেকিং
+if [[ -f ~/.termux/theme_set ]]; then
+    echo -e "\033[1;32mYour theme settings are preserved!\033[0m"
+else
+    echo -e "\033[1;31mTheme settings removed!\033[0m"
+fi
